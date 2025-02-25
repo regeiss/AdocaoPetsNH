@@ -1,5 +1,5 @@
 //
-//  PetModel.swift
+//  Pet.swift
 //  ProjetoCusco
 //
 //  Created by Roberto Edgar Geiss on 11/09/24.
@@ -12,6 +12,7 @@ import UIKit
   @Attribute(.unique) var id: String
   var nome: String
   var ativo: Bool = true
+  var isFavorite: Bool = false
   @Attribute(.externalStorage) var imagem: Data?
   var image: UIImage? {
     if let imagem {
@@ -21,12 +22,17 @@ import UIKit
     }
   }
   var creationDate: Date
-  
-  init(id: String, nome: String, ativo: Bool, imagem: Data? = nil, creationDate: Date) {
+
+  init(id: String, nome: String, ativo: Bool, isFavorite: Bool, imagem: Data? = nil, creationDate: Date) {
     self.id = id
     self.nome = nome
     self.ativo = ativo
+    self.isFavorite = isFavorite
     self.imagem = imagem
     self.creationDate = creationDate
   }
+}
+
+extension  Pet {
+
 }

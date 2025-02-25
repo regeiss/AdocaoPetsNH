@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E1E49DC82D6D475000AE7A77 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1E49DC72D6D475000AE7A77 /* .swiftlint.yml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E155FD062D5D642700692278 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		E155FCF12D5D642500692278 /* AdocaoPetsNH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdocaoPetsNH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E155FD052D5D642700692278 /* AdocaoPetsNHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdocaoPetsNHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E155FD0F2D5D642700692278 /* AdocaoPetsNHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdocaoPetsNHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E49DC72D6D475000AE7A77 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,6 +97,7 @@
 				E155FD082D5D642700692278 /* AdocaoPetsNHTests */,
 				E155FD122D5D642700692278 /* AdocaoPetsNHUITests */,
 				E155FCF22D5D642500692278 /* Products */,
+				E1E49DC72D6D475000AE7A77 /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E49DC82D6D475000AE7A77 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

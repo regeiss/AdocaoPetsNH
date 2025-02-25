@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct PetSearchResult: View {
+struct PetsSearchResult: View {
   @Binding var searchText: String
   @Query private var pets: [Pet]
 

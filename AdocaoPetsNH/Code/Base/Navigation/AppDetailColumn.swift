@@ -8,7 +8,7 @@ The detail column of the split view.
 import SwiftData
 import SwiftUI
 
-//import BackyardBirdsData
+// import BackyardBirdsData
 
 struct AppDetailColumn: View {
   var screen: AppScreen?

@@ -5,13 +5,13 @@
 ////  Created by Roberto Edgar Geiss on 11/09/24.
 ////
 //
-//import UIKit
-//import SwiftUI
-//import Firebase
-//import FirebaseStorage
+// import UIKit
+// import SwiftUI
+// import Firebase
+// import FirebaseStorage
 //
-//public class StorageManager: ObservableObject
-//{
+// public class StorageManager: ObservableObject
+// {
 //    let storage = Storage.storage()
 //    
 //    func upload(image: UIImage)
@@ -50,10 +50,10 @@
 //        return resizedImage
 //    }
 //    
-//}
+// }
 //
-//extension UIImage
-//{
+// extension UIImage
+// {
 //    func aspectFittedToHeight(_ newHeight: CGFloat) -> UIImage
 //    {
 //        let scale = newHeight / self.size.height
@@ -65,4 +65,4 @@
 //            self.draw(in: CGRect(origin: .zero, size: newSize))
 //        }
 //    }
-//}
+// }

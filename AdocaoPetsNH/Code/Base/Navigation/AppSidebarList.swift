@@ -9,13 +9,13 @@ import SwiftUI
 
 struct AppSidebarList: View {
   @Binding var selection: AppScreen?
-  
+
   var body: some View {
     List(AppScreen.allCases, selection: $selection) { screen in
       NavigationLink(value: screen) {
         screen.label
       }
     }
-    .navigationTitle("Backyard Birds")
+    .navigationTitle("Adote um pet")
   }
 }

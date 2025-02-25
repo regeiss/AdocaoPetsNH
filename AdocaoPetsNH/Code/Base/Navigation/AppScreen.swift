@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-//import BackyardBirdsUI
-//import BackyardBirdsData
+// import BackyardBirdsUI
+// import BackyardBirdsData
 
 enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
   case home
@@ -43,13 +43,41 @@ extension AppScreen {
     case .home:
       HomeNavigationStack()
     case .abrigos:
-      PlantsNavigationStack()
+      AbrigoNavigationStack()
     case .pets:
-      BirdsNavigationStack()
+      PetNavigationStack()
     case .localizacao:
-      MapView()
+      LocalizacaoNavigationStack()
     case .perfil:
-      AccountNavigationStack()
+      PerfilNavigationStack()
     }
   }
+}
+
+struct AbrigoNavigationStack: View {
+  var body: some View {
+    Text("Abrigo")
+  }
+
+}
+
+struct PetNavigationStack: View {
+  var body: some View {
+    Text("Pet")
+  }
+
+}
+
+struct LocalizacaoNavigationStack: View {
+  var body: some View {
+    Text("Localizacao")
+  }
+
+}
+
+struct PerfilNavigationStack: View {
+  var body: some View {
+    Text("Perfil")
+  }
+
 }

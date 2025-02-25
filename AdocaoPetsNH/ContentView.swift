@@ -14,7 +14,7 @@ struct ContentView: View {
 
   var body: some View {
     if prefersTabNavigation {
-      TabViewScreen()
+      AppTabView(selection: $selection)
     } else {
       NavigationSplitView {
           AppSidebarList(selection: $selection)

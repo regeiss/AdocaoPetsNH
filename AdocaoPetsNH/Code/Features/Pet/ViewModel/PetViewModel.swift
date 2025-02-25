@@ -5,15 +5,15 @@
 ////  Created by Roberto Edgar Geiss on 11/09/24.
 ////
 //
-//import Foundation
-//import Combine
-//import Factory
-//import UIKit
-//import Firebase
-//import FirebaseStorage
+// import Foundation
+// import Combine
+// import Factory
+// import UIKit
+// import Firebase
+// import FirebaseStorage
 //
-//class PetViewModel: ObservableObject
-//{
+// class PetViewModel: ObservableObject
+// {
 //    @Published var pet = [Pet]()
 //    @Published var errorMessage: String?
 //
@@ -98,4 +98,4 @@
 ////        
 ////        return true
 ////    }
-//}
+// }

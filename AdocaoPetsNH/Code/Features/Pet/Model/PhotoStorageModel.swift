@@ -5,12 +5,12 @@
 //  Created by Roberto Edgar Geiss on 11/09/24.
 //
 
-//import Foundation
-//import Firebase
-//import FirebaseFirestoreSwift
+// import Foundation
+// import Firebase
+// import FirebaseFirestoreSwift
 //
-//struct PhotoStorage: Identifiable, Codable
-//{
+// struct PhotoStorage: Identifiable, Codable
+// {
 //    @DocumentID var id: String?
 //    var imageURLString: String = ""
 //    var descricao: String = ""
@@ -21,5 +21,4 @@
 //    {
 //        return ["imageURLString": imageURLString, "descricao": descricao, "reviewer": reviewer, "postedOn": Timestamp(date: Date())]
 //    }
-//}
-
+// }

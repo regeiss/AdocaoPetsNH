@@ -14,11 +14,11 @@ struct HomeNavigationStack: View {
 
   var body: some View {
     NavigationStack {
-      BackyardGrid()
+      PetGrid()
         .navigationTitle("Home")
-        .navigationDestination(for: Pet.ID.self) { backyardID in
-          if let pet = pets.first(where: { $0.id == backyardID }) {
-            BackyardDetailView(pet: pet)
+        .navigationDestination(for: Pet.ID.self) { petID in
+          if let pet = pets.first(where: { $0.id == petID }) {
+            PetDetailView(pet: pet)
               #if os(macOS)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()

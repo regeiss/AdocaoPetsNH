@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-//struct PetDetalheView: View
-//{
-//    @Binding var pet: Pet
-//    
-//    var body: some View
-//    {
-//        HStack(alignment: .top)
+struct PetDetailView: View {
+    var pet: Pet
+
+    var body: some View {
+      Text(pet.nome)
 //        {
 //            AsyncImage(url: URL(string: pet.imageURLString ?? ""))
 //            { image in
@@ -36,5 +34,5 @@ import SwiftUI
 //                Spacer()
 //            }
 //        }
-//    }
-//}
+    }
+}

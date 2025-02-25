@@ -23,7 +23,7 @@ extension PrefersTabNavigationEnvironmentKey: UITraitBridgedEnvironmentKey {
   static func read(from traitCollection: UITraitCollection) -> Bool {
     return traitCollection.userInterfaceIdiom == .phone || traitCollection.userInterfaceIdiom == .tv
   }
-  
+
   static func write(to mutableTraits: inout UIMutableTraits, value: Bool) {
     // Do not write.
   }
