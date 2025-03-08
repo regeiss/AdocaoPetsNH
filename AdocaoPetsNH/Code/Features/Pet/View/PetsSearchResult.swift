@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct PetsSearchResult: View {
+  @Environment(\.modelContext) private var context
   @Binding var searchText: String
   @Query private var pets: [Pet]
 
@@ -28,6 +29,14 @@ struct PetsSearchResult: View {
   var body: some View {
     ForEach(pets) { pet in
       PetGridItem(pet: pet)
+        .padding([.trailing, .leading], 10)
+    }
+    .onDelete(perform: deletePets(indexes:))
+  }
+
+  private func deletePets(indexes: IndexSet) {
+    for index in indexes {
+      context.delete(pets[index])
     }
   }
 }

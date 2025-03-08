@@ -10,19 +10,16 @@ import OSLog
 import SwiftData
 
 private let logger = Logger(subsystem: "PetsData", category: "Pets Generation")
+private var descricao: [String] = ["Rex", "Heiko", "Paco", "Dolly"]
 
 extension Pet {
   static func generatePets(modelContext: ModelContext) {
     logger.info("Generating/Fetching Pets")
 
-    let pet = Pet(id: UUID().uuidString, nome: "Rex", ativo: true, isFavorite: true, creationDate: Date())
-    modelContext.insert(pet)
-    let pet1 = Pet(id: UUID().uuidString, nome: "Fido", ativo: true, isFavorite: true, creationDate: Date())
-    modelContext.insert(pet1)
-    let pet2 = Pet(id: UUID().uuidString, nome: "Max", ativo: true, isFavorite: true, creationDate: Date())
-    modelContext.insert(pet2)
-    let pet3 = Pet(id: UUID().uuidString, nome: "Faisca", ativo: true, isFavorite: true, creationDate: Date())
-    modelContext.insert(pet3)
+    descricao.forEach { nome in
+      modelContext.insert(
+        Pet(id: UUID().uuidString, nome: nome, ativo: true, isFavorite: true, creationDate: Date()))
+    }
 
     logger.info("Finished Generating/Fetching Pets")
   }

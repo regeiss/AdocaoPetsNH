@@ -10,13 +10,11 @@ import SwiftUI
 struct PetViewPort: View {
   var pet: Pet
 
-    var body: some View {
+  var body: some View {
+    GeometryReader { geometry in
       RoundedRectangle(cornerRadius: 25)
-          .fill(.green)
-          .frame(width: 150, height: 100)
+        .fill(.gray)
+        .frame(width: geometry.size.width, height: geometry.size.height)
     }
+  }
 }
-
-// #Preview {
-//    PetViewPort()
-// }

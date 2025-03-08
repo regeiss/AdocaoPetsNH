@@ -61,13 +61,6 @@ struct AbrigoNavigationStack: View {
 
 }
 
-struct PetNavigationStack: View {
-  var body: some View {
-    Text("Pet")
-  }
-
-}
-
 struct LocalizacaoNavigationStack: View {
   var body: some View {
     Text("Localizacao")

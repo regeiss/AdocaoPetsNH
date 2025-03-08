@@ -1,0 +1,101 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "Abrigo" : {
+
+    },
+    "Abrigos" : {
+
+    },
+    "Add pet" : {
+
+    },
+    "Adote um pet" : {
+
+    },
+    "Alertas" : {
+
+    },
+    "Auxilio Emergencial" : {
+
+    },
+    "Backup" : {
+
+    },
+    "Cadastros" : {
+
+    },
+    "Data" : {
+
+    },
+    "Favorito" : {
+
+    },
+    "Finish Setup" : {
+
+    },
+    "Home" : {
+
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "Localizacao" : {
+
+    },
+    "Modo escuro" : {
+
+    },
+    "Nome" : {
+
+    },
+    "Perfil" : {
+
+    },
+    "Pet detalhe" : {
+
+    },
+    "Pets" : {
+
+    },
+    "Pets Stack" : {
+
+    },
+    "Pick something from the list." : {
+
+    },
+    "Resetar Onboarding" : {
+
+    },
+    "Search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesquisar"
+          }
+        }
+      }
+    },
+    "Select a Backyard" : {
+
+    },
+    "Simulate Network Error" : {
+
+    },
+    "SwiftUI topic" : {
+
+    },
+    "Tela placeholder" : {
+
+    },
+    "Vamos começar" : {
+
+    }
+  },
+  "version" : "1.0"
+}

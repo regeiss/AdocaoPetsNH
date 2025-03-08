@@ -9,8 +9,8 @@ import SwiftData
 import UIKit
 
 @Model class Pet {
-  @Attribute(.unique) var id: String
-  var nome: String
+  var id: String = UUID().uuidString
+  var nome: String = ""
   var ativo: Bool = true
   var isFavorite: Bool = false
   @Attribute(.externalStorage) var imagem: Data?
@@ -21,7 +21,11 @@ import UIKit
       return nil
     }
   }
-  var creationDate: Date
+  var raca: Raca?
+  var porte: Porte?
+  var pelagem: Pelagem?
+  var cor: Cor?
+  var creationDate: Date = Date.now
 
   init(id: String, nome: String, ativo: Bool, isFavorite: Bool, imagem: Data? = nil, creationDate: Date) {
     self.id = id

@@ -21,25 +21,20 @@ private let logger = Logger(subsystem: "PetsData", category: "DataGeneration")
     initializationDate == nil
   }
 
-  public init(initializationDate: Date?, lastSimulationDate: Date?, includeEarlyAccessSpecies: Bool = false) {
+  public init(initializationDate: Date?, lastSimulationDate: Date?) {
     self.initializationDate = initializationDate
     self.lastSimulationDate = lastSimulationDate
   }
 
   private func generateInitialData(modelContext: ModelContext) {
-    logger.info("Generating initial data...")
+    logger.info("Gerando dados iniciais")
 
-    // First, generate all available bird food, bird species, and plant species.
-//    logger.info("Generating all bird foods")
-//    BirdFood.generateAll(modelContext: modelContext)
-
-//    Backyard.generateAll(modelContext: modelContext)
-
-    logger.info("Generating account")
-    // The app content is complete, now it's time to create the person's account.
     Pet.generatePets(modelContext: modelContext)
-
-    logger.info("Completed generating initial data")
+    Pelagem.generatePelagem(modelContext: modelContext)
+    Raca.generateRaca(modelContext: modelContext)
+    Porte.generatePorte(modelContext: modelContext)
+    Cor.generateCor(modelContext: modelContext)
+    logger.info("Geração dos dados iniciais concluída")
     initializationDate = .now
   }
 
@@ -58,14 +53,13 @@ private let logger = Logger(subsystem: "PetsData", category: "DataGeneration")
 
   public static func generateAllData(modelContext: ModelContext) {
     let instance = instance(with: modelContext)
-    logger.info("Attempting to statically simulate historical events...")
     instance.simulateHistoricalEvents(modelContext: modelContext)
   }
 
   private func simulateHistoricalEvents(modelContext: ModelContext) {
-    logger.info("Attempting to simulate historical events...")
+    logger.info("Simulando eventos históricos...")
     if requiresInitialDataGeneration {
-      logger.info("Requires an initial data generation")
+      logger.info("Requer inicialização de dados...")
       generateInitialData(modelContext: modelContext)
     }
   }
@@ -77,13 +71,10 @@ extension DataGeneration {
 
   public static let schema = SwiftData.Schema([
     DataGeneration.self,
-    Pet.self
-      //        PlantSpecies.self,
-      //        Plant.self,
-      //        BirdSpecies.self,
-      //        BirdFood.self,
-      //        Bird.self,
-      //        Backyard.self,
-      //        BackyardVisitorEvent.self
+    Pet.self,
+    Pelagem.self,
+    Raca.self,
+    Porte.self,
+    Cor.self
   ])
 }

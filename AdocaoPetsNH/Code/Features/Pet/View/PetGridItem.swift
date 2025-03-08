@@ -20,7 +20,7 @@ struct PetGridItem: View {
       VStack {
         Header(pet: pet)
         Spacer()
-//        SupplyGauges(pet: pet)
+        //        SupplyGauges(pet: pet)
       }
     }
     .contentShape(.containerRelative)
@@ -32,6 +32,13 @@ struct PetGridItem: View {
 
     var body: some View {
       HStack {
+        Image(systemName: "photo")
+          .resizable()
+          .aspectRatio(contentMode: .fill)
+          .clipShape(Circle())
+          .padding()
+          .frame(width: 100, height: 100)
+
         Text(pet.nome)
           .font(.callout)
           .padding(8)
@@ -43,7 +50,7 @@ struct PetGridItem: View {
         Button {
           pet.isFavorite.toggle()
         } label: {
-          Label("Favorite", systemImage: "star")
+          Label("Favorito", systemImage: "star")
             .symbolVariant(pet.isFavorite ? .fill : .none)
             .contentTransition(.symbolEffect(pet.isFavorite ? .replace.upUp : .replace.downUp))
             .padding(8)
@@ -58,27 +65,8 @@ struct PetGridItem: View {
       .padding(8)
     }
   }
+}
 
-//  struct SupplyGauges: View {
-//    var backyard: Backyard
-//
-//    var body: some View {
-//      HStack {
-//        BackyardSupplyGauge(backyard: backyard, supplies: .food)
-//          .scaleEffect(0.65)
-//          .padding(8)
-//          .frame(width: 44, height: 44)
-//          .background(in: .circle)
-//        Spacer()
-//        BackyardSupplyGauge(backyard: backyard, supplies: .water)
-//          .scaleEffect(0.65)
-//          .padding(8)
-//          .frame(width: 44, height: 44)
-//          .background(in: .circle)
-//      }
-//      .padding(8)
-//      .backgroundStyle(.regularMaterial)
-//      .allowsHitTesting(false)
-//    }
-//  }
+#Preview {
+  PetGridItem(pet: Pet(id: UUID().uuidString, nome: "Test a dog", ativo: true, isFavorite: true, creationDate: Date()))
 }
