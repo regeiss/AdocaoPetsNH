@@ -10,11 +10,9 @@ import SwiftUI
 
 struct PetDetail: View {
   @Bindable var pet: Pet
-  let isNovo: Bool
 
   init(pet: Pet, isNovo: Bool) {
     self.pet = pet
-    self.isNovo = isNovo
   }
 
   var body: some View {
@@ -22,7 +20,6 @@ struct PetDetail: View {
       TextField("Nome", text: $pet.nome)
         .autocorrectionDisabled()
       DatePicker("Data", selection: $pet.creationDate, displayedComponents: .date)
-      //    Text(pet.creationDate.formatted(date: .numeric, time: .omitted))
       Toggle("Favorito", isOn: $pet.isFavorite)
 
       Image(systemName: "photo")
@@ -39,5 +36,6 @@ struct PetDetail: View {
         EditButton()
       }
     }
+    .frame(maxWidth: .infinity, alignment: .trailing)
   }
 }

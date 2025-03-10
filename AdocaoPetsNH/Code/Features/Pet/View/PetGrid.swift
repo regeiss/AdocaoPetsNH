@@ -15,9 +15,8 @@ struct PetGrid: View {
 
   var body: some View {
     ScrollView {
-
       LazyVGrid(columns: [.init(.adaptive(minimum: 300))], spacing: 10) {
-        PetsSearchResult(searchText: $searchText)
+        PetSearchResult(searchText: $searchText)
       }
       .toolbar {
         ToolbarItem {
@@ -25,12 +24,6 @@ struct PetGrid: View {
         }
       }
     }
-//    .sheet(item: $novoPet) { pet in
-//      NavigationStack {
-//        PetDetail(pet: pet)
-//      }
-//    }
-//    .searchable(text: $searchText)
     .searchSuggestions {
       if searchText.isEmpty {
         PetsSearchSuggestions()
@@ -43,7 +36,6 @@ struct PetGrid: View {
     context.insert(novoPet)
     self.novoPet = novoPet
   }
-
 }
 
 #Preview {

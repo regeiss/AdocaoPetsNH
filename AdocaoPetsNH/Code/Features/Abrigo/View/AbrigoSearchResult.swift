@@ -1,34 +1,35 @@
 //
-//  PetSearchResult.swift
+//  PetsSearchResult.swift
 //  AdocaoPetsNH
 //
-//  Created by Roberto Edgar Geiss on 19/02/25.
+//  Created by Roberto Edgar Geiss on 10/03/25.
 //
+
 
 import SwiftData
 import SwiftUI
 
-struct PetsSearchResult: View {
+struct AbrigoSearchResult: View {
   @Environment(\.modelContext) private var context
   @Binding var searchText: String
-  @Query private var pets: [Pet]
+  @Query private var abrigos: [Abrigo]
 
   init(searchText: Binding<String>) {
     _searchText = searchText
     if searchText.wrappedValue.isEmpty {
-      _pets = Query(sort: \.creationDate)
+      _abrigos = Query(sort: \.creationDate)
     } else {
       let term = searchText.wrappedValue
-      _pets = Query(
-        filter: #Predicate { pets in
-          pets.nome.contains(term)
+      _abrigos = Query(
+        filter: #Predicate { abrigos in
+          abrigos.nome.contains(term)
         }, sort: \.nome)
     }
   }
 
   var body: some View {
-    ForEach(pets) { pet in
-      PetGridItem(pet: pet)
+    ForEach(abrigos) { abrigo in
+      PetGridItem(abrigo: abrigo)
         .padding([.trailing, .leading], 10)
     }
     .onDelete(perform: deletePets(indexes:))
@@ -36,7 +37,7 @@ struct PetsSearchResult: View {
 
   private func deletePets(indexes: IndexSet) {
     for index in indexes {
-      context.delete(pets[index])
+      context.delete(abrigos[index])
     }
   }
 }

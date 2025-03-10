@@ -1,16 +1,15 @@
 //
-//  PetLista.swift
+//  AbrigoLista.swift
 //  AdocaoPetsNH
 //
-//  Created by Roberto Edgar Geiss on 27/02/25.
+//  Created by Roberto Edgar Geiss on 10/03/25.
 //
 
-import SwiftData
 import SwiftUI
 
-struct PetLista: View {
+struct AbrigoLista: View {
   @State private var searchText = ""
-  var pet: Pet
+  var abrigos: Abrigo
 
   var body: some View {
     LazyVGrid(columns: [.init(.adaptive(minimum: 300))], spacing: 10) {

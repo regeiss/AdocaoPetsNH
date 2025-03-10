@@ -67,7 +67,7 @@ private let logger = Logger(subsystem: "PetsData", category: "DataGeneration")
 
 extension DataGeneration {
   public static let container = try! ModelContainer(
-    for: schema, configurations: [.init(isStoredInMemoryOnly: DataGenerationOptions.inMemoryPersistence)])
+    for: schema, configurations: [.init(isStoredInMemoryOnly: DataGenerationOptions.inMemoryPersistence) ])
 
   public static let schema = SwiftData.Schema([
     DataGeneration.self,
