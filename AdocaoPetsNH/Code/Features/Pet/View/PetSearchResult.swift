@@ -28,7 +28,7 @@ struct PetSearchResult: View {
 
   var body: some View {
     ForEach(pets) { pet in
-      PetGridItem(pet: pet)
+      HomeGridItem(pet: pet)
         .padding([.trailing, .leading], 10)
     }
     .onDelete(perform: deletePets(indexes:))

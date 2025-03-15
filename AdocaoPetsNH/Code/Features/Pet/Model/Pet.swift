@@ -14,13 +14,6 @@ import UIKit
   var ativo: Bool = true
   var isFavorite: Bool = false
   @Attribute(.externalStorage) var imagem: Data?
-  var image: UIImage? {
-    if let imagem {
-      return UIImage(data: imagem)
-    } else {
-      return nil
-    }
-  }
   var raca: Raca?
   var porte: Porte?
   var pelagem: Pelagem?

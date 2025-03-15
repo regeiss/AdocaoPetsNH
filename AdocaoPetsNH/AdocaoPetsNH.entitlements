@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.br.com.robertogeiss.AdocaoPetsNH</string>
+		<string>iCloud.br.com.robertogeiss.AdocaoPets</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>

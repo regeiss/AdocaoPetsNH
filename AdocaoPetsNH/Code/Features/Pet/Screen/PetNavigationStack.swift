@@ -14,8 +14,8 @@ struct PetNavigationStack: View {
 
   var body: some View {
     NavigationStack {
-      PetGrid()
-        .navigationTitle("Pets Stack")
+      PetLista()
+        .navigationTitle("Pets ")
         .navigationDestination(for: Pet.ID.self) { petID in
           if let pet = pets.first(where: { $0.id == petID }) {
             PetDetail(pet: pet, isNovo: true)

@@ -19,7 +19,7 @@ struct HomeNavigationStack: View {
 
   var body: some View {
     NavigationStack {
-      PetGrid()
+      HomeGrid()
         .navigationTitle("Home")
         .sheet(isPresented: $isSettingsScreenPresented) {
           AjustesScreen()
@@ -34,10 +34,6 @@ struct HomeNavigationStack: View {
         .navigationDestination(for: Pet.ID.self) { petID in
           if let pet = pets.first(where: { $0.id == petID }) {
             PetDetail(pet: pet, isNovo: false)
-              #if os(macOS)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background()
-              #endif
           }
         }
     }

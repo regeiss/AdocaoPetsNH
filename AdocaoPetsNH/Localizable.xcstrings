@@ -28,6 +28,9 @@
     "Cadastros" : {
 
     },
+    "Cor" : {
+
+    },
     "Data" : {
 
     },
@@ -37,7 +40,13 @@
     "Finish Setup" : {
 
     },
+    "Hello, World!" : {
+
+    },
     "Home" : {
+
+    },
+    "HOME" : {
 
     },
     "Key" : {
@@ -61,10 +70,13 @@
     "Pets" : {
 
     },
-    "Pets Stack" : {
+    "Pets " : {
 
     },
     "Pick something from the list." : {
+
+    },
+    "Raça" : {
 
     },
     "Resetar Onboarding" : {
@@ -81,6 +93,15 @@
         }
       }
     },
+    "Selecione a cor" : {
+
+    },
+    "Selecione a raça" : {
+
+    },
+    "Selecione o tamanho" : {
+
+    },
     "Select a Backyard" : {
 
     },
@@ -88,6 +109,9 @@
 
     },
     "SwiftUI topic" : {
+
+    },
+    "Tamanho" : {
 
     },
     "Tela placeholder" : {

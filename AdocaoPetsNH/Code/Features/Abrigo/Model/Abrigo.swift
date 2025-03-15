@@ -14,7 +14,7 @@ class Abrigo {
   var nome: String = ""
   var ativo: Bool = true
   var creationDate: Date = Date.now
-  
+
  init(id: String, nome: String, ativo: Bool, creationDate: Date) {
     self.id = id
     self.nome = nome

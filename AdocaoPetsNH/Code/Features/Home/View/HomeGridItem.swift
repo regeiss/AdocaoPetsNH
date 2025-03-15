@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PetGridItem: View {
+struct HomeGridItem: View {
   var pet: Pet
 
   var body: some View {
@@ -68,5 +68,5 @@ struct PetGridItem: View {
 }
 
 #Preview {
-  PetGridItem(pet: Pet(id: UUID().uuidString, nome: "Test a dog", ativo: true, isFavorite: true, creationDate: Date()))
+  HomeGridItem(pet: Pet(id: UUID().uuidString, nome: "Test a dog", ativo: true, isFavorite: true, creationDate: Date()))
 }
