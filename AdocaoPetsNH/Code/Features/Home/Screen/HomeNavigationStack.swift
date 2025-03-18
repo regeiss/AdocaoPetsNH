@@ -33,7 +33,7 @@ struct HomeNavigationStack: View {
         }
         .navigationDestination(for: Pet.ID.self) { petID in
           if let pet = pets.first(where: { $0.id == petID }) {
-            PetDetail(pet: pet, isNovo: false)
+            PetDetail(pet: pet)
           }
         }
     }

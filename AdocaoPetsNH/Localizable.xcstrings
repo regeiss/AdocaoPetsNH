@@ -4,19 +4,25 @@
     "" : {
 
     },
-    "Abrigo" : {
-
-    },
     "Abrigos" : {
 
     },
+    "Abrigos " : {
+
+    },
     "Add pet" : {
+
+    },
+    "Adicione um abrigo" : {
 
     },
     "Adote um pet" : {
 
     },
     "Alertas" : {
+
+    },
+    "Ativo" : {
 
     },
     "Auxilio Emergencial" : {
@@ -26,6 +32,12 @@
 
     },
     "Cadastros" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Cancelar" : {
 
     },
     "Cor" : {
@@ -38,9 +50,6 @@
 
     },
     "Finish Setup" : {
-
-    },
-    "Hello, World!" : {
 
     },
     "Home" : {
@@ -58,7 +67,16 @@
     "Modo escuro" : {
 
     },
+    "Não há abrigos cadastrados" : {
+
+    },
+    "No animals in this category" : {
+
+    },
     "Nome" : {
+
+    },
+    "Novos abrigos aparecem aqui" : {
 
     },
     "Perfil" : {
@@ -80,6 +98,12 @@
 
     },
     "Resetar Onboarding" : {
+
+    },
+    "Salvar" : {
+
+    },
+    "Save" : {
 
     },
     "Search" : {

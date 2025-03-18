@@ -29,7 +29,7 @@ extension AppScreen {
     case .pets:
       Label("Pets", systemImage: "dog")
     case .abrigos:
-      Label("Abrigos", systemImage: "leaf")
+      Label("Abrigos", systemImage: "door.french.open")
     case .localizacao:
       Label("Localizacao", systemImage: "location")
     case .perfil:
@@ -52,13 +52,6 @@ extension AppScreen {
       PerfilNavigationStack()
     }
   }
-}
-
-struct AbrigoNavigationStack: View {
-  var body: some View {
-    Text("Abrigo")
-  }
-
 }
 
 struct LocalizacaoNavigationStack: View {

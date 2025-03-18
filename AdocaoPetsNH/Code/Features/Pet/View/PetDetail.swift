@@ -10,17 +10,21 @@ import SwiftUI
 
 struct PetDetail: View {
   @Environment(\.dismiss) var dismiss
-  @Bindable var pet: Pet
+  @Environment(\.modelContext) private var modelContext
   @Query(sort: \Raca.nome) private var racas: [Raca]
   @Query(sort: \Porte.nome) private var portes: [Porte]
   @Query(sort: \Cor.nome) private var cores: [Cor]
 
+  let pet: Pet?
+  @State private var nome: String = ""
+  @State private var creationDate: Date = Date()
+  @State private var isFavorite: Bool = false
   @State private var selectedRaca: Raca?
   @State private var selectedPorte: Porte?
   @State private var selectedCor: Cor?
-  
-  init(pet: Pet, isNovo: Bool) {
-    self.pet = pet
+
+  private var editorTitle: String {
+    pet == nil ? "Add Pet" : "Edit Pet"
   }
 
   var body: some View {
@@ -28,24 +32,30 @@ struct PetDetail: View {
       Image(systemName: "photo")
         .resizable()
         .aspectRatio(contentMode: .fit)
-        .clipShape(RoundedRectangle(cornerRadius: 25))
+        .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding()
-      TextField("Nome", text: $pet.nome)
+
+      TextField("Nome", text: $nome)
         .autocorrectionDisabled()
-      DatePicker("Data", selection: $pet.creationDate, displayedComponents: .date)
-      Toggle("Favorito", isOn: $pet.isFavorite)
+
+      DatePicker("Data", selection: $creationDate, displayedComponents: .date)
+
+      Toggle("Favorito", isOn: $isFavorite)
+
       Picker("Raça", selection: $selectedRaca) {
         Text("Selecione a raça").tag(nil as Raca?)
         ForEach(racas) { raca in
           Text(raca.nome).tag(raca as Raca?)
         }
       }
+
       Picker("Cor", selection: $selectedCor) {
         Text("Selecione a cor").tag(nil as Cor?)
         ForEach(cores) { cor in
           Text(cor.nome).tag(cor as Cor?)
         }
       }
+
       Picker("Tamanho", selection: $selectedPorte) {
         Text("Selecione o tamanho").tag(nil as Porte?)
         ForEach(portes) { porte in
@@ -53,13 +63,60 @@ struct PetDetail: View {
         }
       }
     }
+    .onAppear {
+      if let pet {
+        nome = pet.nome
+        creationDate = pet.creationDate
+        isFavorite = pet.isFavorite
+        selectedRaca = pet.raca
+        selectedPorte = pet.porte
+        selectedCor = pet.cor
+      }
+    }
     .navigationTitle("Pet detalhe")
     .navigationBarTitleDisplayMode(.inline)
     .toolbar {
-      ToolbarItem(placement: .topBarTrailing) {
-        EditButton()
+      ToolbarItem(placement: .principal) {
+        Text(editorTitle)
+      }
+
+      ToolbarItem(placement: .confirmationAction) {
+        Button("Save") {
+          withAnimation {
+            save()
+            dismiss()
+          }
+        }
+      }
+
+      ToolbarItem(placement: .cancellationAction) {
+        Button("Cancel", role: .cancel) {
+          dismiss()
+        }
       }
     }
     .frame(maxWidth: .infinity, alignment: .trailing)
+  }
+
+  private func save() {
+    if let pet {
+      // Edit the pet.
+      pet.nome = nome
+      pet.creationDate = creationDate
+      pet.isFavorite = isFavorite
+      pet.cor = selectedCor
+      pet.raca = selectedRaca
+      pet.porte = selectedPorte
+
+    } else {
+      // Add an pet.
+      let novoPet = Pet(
+        id: UUID().uuidString, nome: nome, ativo: true, isFavorite: isFavorite, creationDate: creationDate)
+      novoPet.cor = selectedCor
+      novoPet.raca = selectedRaca
+      novoPet.porte = selectedPorte
+
+      modelContext.insert(novoPet)
+    }
   }
 }

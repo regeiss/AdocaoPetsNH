@@ -27,6 +27,10 @@ import UIKit
     self.isFavorite = isFavorite
     self.imagem = imagem
     self.creationDate = creationDate
+    self.cor = nil
+    self.pelagem = nil
+    self.porte = nil
+    self.raca = nil
   }
 }
 
