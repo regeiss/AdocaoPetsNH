@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "Abrigo detalhe" : {
+
+    },
     "Abrigos" : {
 
     },
@@ -34,9 +37,6 @@
     "Cadastros" : {
 
     },
-    "Cancel" : {
-
-    },
     "Cancelar" : {
 
     },
@@ -50,6 +50,9 @@
 
     },
     "Finish Setup" : {
+
+    },
+    "Hello, World!" : {
 
     },
     "Home" : {
@@ -101,9 +104,6 @@
 
     },
     "Salvar" : {
-
-    },
-    "Save" : {
 
     },
     "Search" : {

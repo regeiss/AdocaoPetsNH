@@ -10,8 +10,8 @@ import SwiftUI
 
 struct PetLista: View {
   @State private var searchText = ""
-  @State private var novoPet: Pet?
-  @Environment(\.modelContext) var context
+  // @State private var novoPet: Pet?
+  // @Environment(\.modelContext) var context
 
   var body: some View {
     ScrollView {
@@ -24,6 +24,7 @@ struct PetLista: View {
         }
       }
     }
+    .searchable(text: $searchText)
     .searchSuggestions {
       if searchText.isEmpty {
         PetsSearchSuggestions()
@@ -32,9 +33,9 @@ struct PetLista: View {
   }
 
   private func addPet() {
-    let novoPet = Pet(id: UUID().uuidString, nome: "", ativo: true, isFavorite: false, creationDate: Date())
-    context.insert(novoPet)
-    self.novoPet = novoPet
+//    let novoPet = Pet(id: UUID().uuidString, nome: "", ativo: true, isFavorite: false, creationDate: Date())
+//    context.insert(novoPet)
+//    self.novoPet = novoPet
   }
 }
 

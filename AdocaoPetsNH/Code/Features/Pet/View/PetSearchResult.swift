@@ -19,16 +19,13 @@ struct PetSearchResult: View {
       _pets = Query(sort: \.creationDate)
     } else {
       let term = searchText.wrappedValue
-      _pets = Query(
-        filter: #Predicate { pets in
-          pets.nome.contains(term)
-        }, sort: \.nome)
+      _pets = Query(filter: #Predicate { pets in pets.nome.contains(term) }, sort: \.nome)
     }
   }
 
   var body: some View {
     ForEach(pets) { pet in
-      HomeGridItem(pet: pet)
+      PetListaDetalhe(pet: pet)
         .padding([.trailing, .leading], 10)
     }
     .onDelete(perform: deletePets(indexes:))

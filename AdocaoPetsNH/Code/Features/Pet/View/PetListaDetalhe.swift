@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct HomeGridItem: View {
+struct PetListaDetalhe: View {
   var pet: Pet
 
   var body: some View {
     ZStack {
       NavigationLink(value: pet.id) {
-        PetViewPort(pet: pet)
+        PetFundoLista(pet: pet)
       }
       .buttonStyle(.plain)
 
@@ -68,5 +68,5 @@ struct HomeGridItem: View {
 }
 
 #Preview {
-  HomeGridItem(pet: Pet(id: UUID().uuidString, nome: "Test a dog", ativo: true, isFavorite: true, creationDate: Date()))
+  PetListaDetalhe(pet: Pet(id: UUID().uuidString, nome: "Test a dog", ativo: true, isFavorite: true, creationDate: Date()))
 }

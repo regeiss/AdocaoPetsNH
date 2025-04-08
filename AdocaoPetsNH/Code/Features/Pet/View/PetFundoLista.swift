@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PetViewPort: View {
+struct PetFundoLista: View {
   var pet: Pet
 
   var body: some View {

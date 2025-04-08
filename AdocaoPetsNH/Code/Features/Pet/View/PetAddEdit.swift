@@ -8,9 +8,10 @@
 import SwiftData
 import SwiftUI
 
-struct PetDetail: View {
+struct PetAddEdit: View {
   @Environment(\.dismiss) var dismiss
   @Environment(\.modelContext) private var modelContext
+
   @Query(sort: \Raca.nome) private var racas: [Raca]
   @Query(sort: \Porte.nome) private var portes: [Porte]
   @Query(sort: \Cor.nome) private var cores: [Cor]
@@ -24,7 +25,7 @@ struct PetDetail: View {
   @State private var selectedCor: Cor?
 
   private var editorTitle: String {
-    pet == nil ? "Add Pet" : "Edit Pet"
+    pet == nil ? "Adidionar pet" : "Editar pet"
   }
 
   var body: some View {
@@ -75,13 +76,14 @@ struct PetDetail: View {
     }
     .navigationTitle("Pet detalhe")
     .navigationBarTitleDisplayMode(.inline)
+    .navigationBarBackButtonHidden(true)
     .toolbar {
       ToolbarItem(placement: .principal) {
         Text(editorTitle)
       }
 
       ToolbarItem(placement: .confirmationAction) {
-        Button("Save") {
+        Button("Salvar") {
           withAnimation {
             save()
             dismiss()
@@ -90,7 +92,7 @@ struct PetDetail: View {
       }
 
       ToolbarItem(placement: .cancellationAction) {
-        Button("Cancel", role: .cancel) {
+        Button("Cancelar", role: .cancel) {
           dismiss()
         }
       }

@@ -34,6 +34,7 @@ private let logger = Logger(subsystem: "PetsData", category: "DataGeneration")
     Raca.generateRaca(modelContext: modelContext)
     Porte.generatePorte(modelContext: modelContext)
     Cor.generateCor(modelContext: modelContext)
+    Abrigo.generateAbrigos(modelContext: modelContext)
     logger.info("Geração dos dados iniciais concluída")
     initializationDate = .now
   }
